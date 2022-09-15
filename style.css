@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none; /* remove os pontinhos da lista */
+}
+
+body {
+    background: url(./img/background.jpg); /* recebe a imagem onde ela esta guardada no pc*/
+    background-position: top center; /* posicionamento do fundo/imagem*/
+    background-size: 100% auto; /* o tamanho da imagem de fundo, largura da imagem*/
+    background-repeat: no-repeat; /* para nao repetir a imagem de fundo */
+    background-color: #121214; /* cor do fundo da tela */
+}
+
+body * {
+    font-family: 'inter' sans-serif;
+    line-height: 160%;
+}
+
+header {
+    padding-top: 32px;
+    height: calc(120px + 32px);
+}
+
+header div {
+    border-radius: 50%;
+    display: flex;
+    margin: auto;
+    padding: 4px;
+    width: 120px;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+
+    transition: transform .3s;/* transition faz com que o aumento do scale da imagem seja mais suave*/
+
+}
+
+
+
+header div img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+header div:hover { /*hover quando passa o mouse na imagem ela aumenta*/
+    transform: scale(1.1);
+}
+
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+    display: grid;
+    gap: 24px; /* empaçamento entre caixas */
+}
+
+section {
+    color: white;
+    background: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+section ul li{ /* transition faz com que o aumento do scale da imagem seja mais suave*/
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games-list img {
+    border-radius: 10px;
+    width: 95px;
+}
+
+.channel-list img {
+    border-radius: 50%;
+    width: 50px;
+    border: 1px solid #443E54;
+}
+
+.git-hub {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background: rgb(50, 50, 50);
+    
+
+}
+
+.linked-in {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+/* animations*/
+
+header div {
+    animation: fromtop .7s .2s backwards; /*backwards ele puxa as propriedades para a animação*/
+}
+
+main section {
+    animation: frombottom .7s backwards;
+}
+
+main section:nth-child(1){ /* posso pegar o elemento do main e chamar de 'filho' e chamar ele em ordem numerica*/
+    animation-delay: 0;
+}
+
+main section:nth-child(2){
+    animation-delay: .3s;
+}
+
+main section:nth-child(3){
+    animation-delay: .6s;
+}
+
+@keyframes fromtop { /*keyframes -nome qualquer- serve pra dar inicio a animação da imagem vindo do top da pagina*/
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); /*traslateY é o eixo vertical da pagina cima para baixo*/
+    }
+}
+
+@keyframes frombottom { /*keyframes -nome qualquer- serve pra dar inicio a animação da imagem vindo do top da pagina*/
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); /*traslateY é o eixo vertical da pagina cima para baixo*/
+    }
+}
+
+
+
